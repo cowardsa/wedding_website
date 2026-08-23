@@ -4,24 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karolina & Samuel — Our Wedding</title>
+  <title>Karolina &amp; Samuel — Our Wedding</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Josefin+Sans:wght@200;300;400&amp;display=swap"
     rel="stylesheet" />
   <style>
     :root {
       --cream: #ecf4e8;
-      /* Wedding Weekend background */
       --warm-white: #f5fbf2;
       --gold: #d39d6d;
       --gold-light: #d27d2d;
       --charcoal: #2f3a31;
-      /* welcome page background */
-      /* --taupe: #657763; */
       --taupe: #3b5a10;
       --blush: #d9e9d1;
-      --sage: #9fbe91;
-      /* --sage: #9ea38f; */
       --herobg: #38522b;
     }
 
@@ -52,8 +47,6 @@
       display: flex;
       justify-content: center;
       gap: 2.5rem;
-      /* background: rgba(247, 243, 238, 0.85); */
-      /* background: var(--blush); */
       background: #879775;
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(184, 149, 106, 0.2);
@@ -101,7 +94,6 @@
       justify-content: center;
       text-align: center;
       position: relative;
-      /* background: var(--taupe); */
       background: var(--herobg);
       overflow: hidden;
     }
@@ -192,7 +184,6 @@
 
     .hero h1 em {
       font-style: italic;
-      /* color: rgba(255, 255, 255, 0.7); */
       color: var(--warm-white);
     }
 
@@ -301,10 +292,6 @@
     }
 
     /* ── OUR STORY ── */
-    #story {
-      background: var(--warm-white);
-    }
-
     .story-grid {
       max-width: 900px;
       margin: 0 auto;
@@ -328,19 +315,6 @@
       inset: 12px;
       border: 1px solid rgba(255, 255, 255, 0.35);
       border-radius: 2px;
-    }
-
-    .story-image span {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
     }
 
     .story-image img {
@@ -406,7 +380,6 @@
       text-align: center;
       padding: 1.5rem 1.2rem;
       background: var(--warm-white);
-      /* background: #ff7518; */
       border: 1px solid rgba(184, 149, 106, 0.15);
       border-radius: 2px;
       position: relative;
@@ -439,10 +412,6 @@
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 0.35rem;
-    }
-
-    .detail-desc {
-      margin-top: 0;
     }
 
     /* ── INFO SECTIONS ── */
@@ -519,7 +488,6 @@
 
     /* ── RSVP ── */
     #rsvp {
-      /* background: linear-gradient(160deg, var(--cream) 0%, rgba(212, 168, 150, 0.12) 50%, var(--cream) 100%); */
       background: var(--warm-white);
     }
 
@@ -537,52 +505,8 @@
       margin-bottom: 2.2rem;
     }
 
-    .rsvp-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .rsvp-form input,
-    .rsvp-form select {
-      width: 100%;
-      padding: 0.9rem 1.2rem;
-      border: 1px solid rgba(184, 149, 106, 0.25);
-      background: var(--warm-white);
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      color: var(--charcoal);
-      outline: none;
-      transition: border-color 0.3s;
-      border-radius: 2px;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-
-    .rsvp-form input::placeholder {
-      color: var(--taupe);
-      font-weight: 300;
-    }
-
-    .rsvp-form input:focus,
-    .rsvp-form select:focus {
-      border-color: var(--gold);
-    }
-
-    .rsvp-form select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a7e72'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1.2rem center;
-      padding-right: 2.5rem;
-      color: var(--taupe);
-    }
-
-    .rsvp-form select option {
-      color: var(--charcoal);
-    }
-
     .btn-rsvp {
+      display: inline-block;
       margin-top: 0.5rem;
       padding: 0.95rem 2rem;
       background: var(--gold);
@@ -595,6 +519,7 @@
       font-weight: 300;
       cursor: pointer;
       border-radius: 2px;
+      text-decoration: none;
       transition: background 0.3s, transform 0.2s;
     }
 
@@ -635,11 +560,6 @@
       .story-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-      }
-
-      .details-grid {
-        grid-template-columns: 1fr;
-        max-width: 380px;
       }
 
       .details-row {
@@ -689,7 +609,7 @@
       <p class="hero-pre">You are cordially invited</p>
       <h1>
         <em>Karolina</em>
-        <span class="ampersand">&</span>
+        <span class="ampersand">&amp;</span>
         <em>Samuel</em>
       </h1>
       <div class="hero-divider"></div>
@@ -716,8 +636,8 @@
           which is mostly inhabited by Karolina's relations.</p>
         <p>The wedding party will then move to Chyżne for a reception that will contain around 20 dinner courses (spread
           across several sittings) and go on until 5am!</p>
-        <p>Most guests will be accomodated in Chyżne at the wedding venue or in nearby Podwilk.</p>
-        <p>The area is full of rural villages about an hours drive south of Krakow bordering the Tatra mountains.
+        <p>Most guests will be accommodated in Chyżne at the wedding venue or in nearby Podwilk.</p>
+        <p>The area is full of rural villages about an hour's drive south of Krakow, bordering the Tatra mountains.
           Being rural public transport is very limited and Uber will not
           work so we'll be providing all essential travels. Further details on travel can be found below.</p>
       </div>
@@ -731,73 +651,75 @@
 
     <div class="details-schedule">
       <div class="details-row">
-        <div class="details-day-label">Day 0<br /><br />Friday</div>
+        <div class="details-day-label">Day 0<br /><br />Friday<br />July 23rd</div>
         <div class="details-row-cards three">
           <div class="detail-card">
             <h3>Guest Check-In</h3>
             <p class="detail-time">from 2:00 PM</p>
-            <p class="detail-desc">Podwilk or Chyżne</p>
+            <p>Podwilk or Chyżne</p>
           </div>
           <div class="detail-card">
             <h3>Airport Transfer 1</h3>
-            <p class="detail-time">5:00 PM</p>
-            <p class="detail-desc">Krakow to Guest Accomodation by Coach</p>
+            <p class="detail-time">2:00 PM</p>
+            <p>Krakow to Guest Accommodation by Coach</p>
           </div>
           <div class="detail-card">
             <h3>Airport Transfer 2</h3>
             <p class="detail-time">9:00 PM</p>
-            <p class="detail-desc">Krakow to Guest Accomodation by Coach</p>
+            <p>Krakow to Guest Accommodation by Coach</p>
           </div>
         </div>
       </div>
 
       <div class="details-row">
-        <div class="details-day-label">Day 1<br /><br />Saturday</div>
+        <div class="details-day-label">Day 1<br /><br />Saturday<br />July 24th</div>
         <div class="details-row-cards three">
           <div class="detail-card">
             <h3>Church Ceremony</h3>
             <p class="detail-time">2:00 PM</p>
-            <p class="detail-desc">Church of the Transfiguration, Jabłonka</p>
+            <p><a
+                href="https://www.google.com/maps/search/?api=1&amp;query=Church+of+the+Transfiguration%2C+Jana+Pawla+II+20%2C+34-480+Jablonka%2C+Poland"
+                target="_blank" rel="noopener noreferrer">Church of the Transfiguration, Jabłonka</a></p>
           </div>
           <div class="detail-card">
             <h3>Reception</h3>
             <p class="detail-time">4:00 PM</p>
-            <p class="detail-desc">Chyżne Miejsce</p>
+            <p><a
+                href="https://www.google.com/maps/search/?api=1&amp;query=Miejsce+Chyzne%2C+Chyzne+297%2C+34-481+Chyzne%2C+Poland"
+                target="_blank" rel="noopener noreferrer">Miejsce Chyżne</a></p>
           </div>
           <div class="detail-card">
             <h3>Bedtime</h3>
             <p class="detail-time">5:00 AM</p>
-            <p class="detail-desc">Return to accomodation in Podwilk or Chyżne</p>
+            <p>Return to accommodation in Podwilk or Chyżne</p>
           </div>
         </div>
       </div>
 
       <div class="details-row">
-        <div class="details-day-label">Day 2<br /><br />Sunday</div>
+        <div class="details-day-label">Day 2<br /><br />Sunday<br />July 25th</div>
         <div class="details-row-cards">
           <div class="detail-card">
             <h3>Farewell Lunch</h3>
             <p class="detail-time">12:00 PM</p>
-            <p class="detail-desc">Amel Orawa Podwilk</p>
+            <p><a
+                href="https://www.google.com/maps/search/?api=1&amp;query=Amel+Orawa%2C+Podwilk+110a%2C+34-722+Podwilk%2C+Poland"
+                target="_blank" rel="noopener noreferrer">Amel Orawa, Podwilk</a></p>
           </div>
           <div class="detail-card">
             <h3>Airport Transfer</h3>
             <p class="detail-time">3:00 PM</p>
-            <p class="detail-desc">Amel Orawa to Krakow Airport by Coach</p>
+            <p>Amel Orawa to Krakow Airport by Coach</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-
   <!-- TRAVEL -->
   <section id="travel" class="info-section alt">
     <h2 class="section-title">Travel</h2>
     <div class="section-divider"></div>
-
-
     <div class="info-content">
       <div class="faq-item">
         <h3 class="faq-question">1. Where should I fly into?</h3>
@@ -807,24 +729,30 @@
       <div class="faq-item">
         <h3 class="faq-question">2. How do I get to/from Jabłonka?</h3>
         <p class="faq-answer">Public transport options are limited so we will be providing two coaches from Krakow
-          airport to accomodation in Jabłonka on Friday 23rd July (one leaving at 2pm and one leaving at 9pm). Please
+          airport to accommodation in Jabłonka on Friday 23rd July (one leaving at 2pm and one leaving at 9pm). Please
           let us know in your RSVP if you intend to take one of these coaches. Similarly we'll provide a return coach at
           3pm on Sunday 25th July back to Krakow airport. If you don't fancy the specified coach slots, then your best
           option is to rent a car from Krakow airport and do the very straightforward hour drive yourself. </p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-question">3. When should I travel?</h3>
+        <h3 class="faq-question">3. What happens if my flight is delayed?</h3>
+        <p class="faq-answer">Let us know as soon as possible. For shorter delays (up to 45 mins) the coach will wait.
+          For longer delays, we will assist with alternative transport or accommodation, and will share a day-of
+          contact number.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">4. When should I travel?</h3>
         <p class="faq-answer">Unfortunately the trip will likely require a day or at least half a day of annual leave
           (sorry). We would recommend flying to Poland on the morning of Friday 23rd July, then fly home
           afternoon/evening of Sunday 25th July. Obviously you may wish to extend your stay in Poland! </p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-question">4. Can I take public transport to Jabłonka?</h3>
+        <h3 class="faq-question">5. Can I take public transport to Jabłonka?</h3>
         <p class="faq-answer">The last resort would be public transport. There is a local bus from Krakow central bus
           station to Jabłonka that runs every 2 hours. Please ask us for further details.</p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-question">5. How do I get around Jabłonka, Podwilk or Chyżne?</h3>
+        <h3 class="faq-question">6. How do I get around Jabłonka, Podwilk or Chyżne?</h3>
         <p class="faq-answer">The villages themselves are walkable but we will be providing all essential travel from
           your provided accommodation to/from the church and reception. Note that on Sunday all shops will be closed in
           the villages.</p>
@@ -838,42 +766,43 @@
     <div class="section-divider"></div>
     <p class="info-overview">We have already reserved accommodation for all guests traveling to Jabłonka and plan to
       cover the cost of Saturday night, leaving guests to cover the cost for the Friday night. The cost for a room
-      will be around £25 per-person per-night. If you wish to extend your stay beyond the two nights pre-booked please
-      let us know.</p>
+      will be around £25 per-person per-night. Once RSVPs have been received, we'll allocate rooms and confirm each
+      guest's accommodation in June 2027. If you wish to extend your stay beyond the two nights pre-booked, please let
+      us know.</p>
     <div class="info-content">
       <h3>Option 1: <a href="https://www.booking.com/Share-tSRcvqw">Amel Orawa, Podwilk</a></h3>
       <p>Will be allocated to guests planning to stay for the Sunday BBQ, as this is where we will be hosting it. Lodge
-        style acommodation for up to 36 guests.</p>
+        style accommodation for up to 36 guests. <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Amel+Orawa%2C+Podwilk+110a%2C+34-722+Podwilk%2C+Poland"
+          target="_blank" rel="noopener noreferrer">View on Google Maps</a>.</p>
     </div>
     <div class="info-content">
       <h3>Option 2: <a href="https://www.miejscechyzne.pl/noclegi">Miejsce Chyżne</a></h3>
       <p>Located on the same site as the wedding reception with space to accommodate up to ?? guests. A mixture of hotel
-        style rooms and small apartments, with breakfast included at the hotel.</p>
+        style rooms and small apartments, with breakfast included at the hotel. <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Miejsce+Chyzne%2C+Chyzne+297%2C+34-481+Chyzne%2C+Poland"
+          target="_blank" rel="noopener noreferrer">View on Google Maps</a>.</p>
     </div>
   </section>
 
-  <!-- Other QuestionsE -->
+  <!-- OTHER QUESTIONS -->
   <section id="questions" class="info-section alt">
     <h2 class="section-title">Other Questions?</h2>
     <div class="section-divider"></div>
     <div class="info-content">
       <div class="faq-item">
-        <div class="faq-item">
-          <h3 class="faq-question">1. What is the dress code for the weekend?</h3>
-          <p class="faq-answer">For the wedding on Saturday please deploy your best formal dress, so suits and ties for
-            me
-            please. The Sunday will be relaxed so please come in something comfortable for a BBQ in the garden.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">2. Surely we need to get the newly weds a gift?</h3>
-          <p class="faq-answer">At a Polish wedding reception there is a ??? ceremony, where guests queue up to greet
-            the
-            newly weds and share a few words. At this exchange, it is customary to give an envelope with a little money.
-            As
-            we've yet to find a permenant home, please don't get us anything more tangible. Polish guests may come with
-            flowers or wine despite our requests. </p>
-        </div>
+        <h3 class="faq-question">1. What is the dress code for the weekend?</h3>
+        <p class="faq-answer">For the wedding on Saturday please deploy your best formal dress, so suits and ties for
+          men please. Sunday will be relaxed, so please come in something comfortable for a BBQ in the garden.</p>
       </div>
+      <div class="faq-item">
+        <h3 class="faq-question">2. Surely we need to get the newlyweds a gift?</h3>
+        <p class="faq-answer">At a Polish wedding reception there is a ??? ceremony, where guests queue up to greet
+          the newlyweds and share a few words. At this exchange, it is customary to give an envelope with a little
+          money. As we've yet to find a permanent home, please don't get us anything more tangible. Polish guests may
+          come with flowers or wine despite our requests.</p>
+      </div>
+    </div>
   </section>
 
   <!-- RSVP -->
@@ -883,28 +812,16 @@
     <div class="section-divider"></div>
 
     <div class="rsvp-box">
-      <p>Kindly let us know if you can join us by the 1st of May. We truly hope to celebrate this day with you.</p>
-      <div class="rsvp-form">
-        <input type="text" placeholder="Your Full Name" />
-        <input type="email" placeholder="Email Address" />
-        <select>
-          <option value="" disabled selected>Will you be attending?</option>
-          <option>Gratefully accepts</option>
-          <option>Regretfully declines</option>
-        </select>
-        <select>
-          <option value="" disabled selected>Number of guests</option>
-          <option>1</option>
-          <option>2</option>
-        </select>
-        <button class="btn-rsvp">Send RSVP</button>
-      </div>
+      <p>Kindly let us know if you can join us by 1st May 2027. We hope to see you in Poland!</p>
+      <!-- Replace this placeholder with the published Google Forms URL. -->
+      <a class="btn-rsvp" href="https://forms.gle/REPLACE_WITH_YOUR_FORM_LINK" target="_blank"
+        rel="noopener noreferrer">Complete RSVP Form</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-names">Karolina & Samuel</p>
+    <p class="footer-names">Karolina &amp; Samuel</p>
     <p>24 - 07 - 2027 &nbsp;|&nbsp; Jabłonka, Poland</p>
   </footer>
 
