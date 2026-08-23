@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karolina & Samuel — Our Wedding</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #ecf4e8;
+      /* Wedding Weekend background */
+      --warm-white: #f5fbf2;
+      --gold: #d39d6d;
+      --gold-light: #d27d2d;
+      --charcoal: #2f3a31;
+      /* welcome page background */
+      /* --taupe: #657763; */
+      --taupe: #3b5a10;
+      --blush: #d9e9d1;
+      --sage: #9fbe91;
+      /* --sage: #9ea38f; */
+      --herobg: #38522b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      /* background: rgba(247, 243, 238, 0.85); */
+      /* background: var(--blush); */
+      background: #879775;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(184, 149, 106, 0.2);
+      transition: padding 0.3s;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--warm-white);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 300;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background: var(--taupe);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--charcoal);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      /* background: var(--taupe); */
+      background: var(--herobg);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(212, 168, 150, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(163, 177, 138, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(184, 149, 106, 0.06) 0%, transparent 70%);
+    }
+
+    .hero-ornament {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(184, 149, 106, 0.15);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    .hero-ornament:nth-child(2) {
+      width: 260px;
+      height: 260px;
+      animation-delay: 1s;
+    }
+
+    .hero-ornament:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      animation-delay: 2s;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.04);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-pre {
+      font-size: 1.5rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(6rem, 8vw, 10rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      /* color: rgba(255, 255, 255, 0.7); */
+      color: var(--warm-white);
+    }
+
+    .ampersand {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--gold-light);
+      display: block;
+      margin: 0.2rem 0;
+    }
+
+    .hero-date {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--warm-white);
+      font-weight: 300;
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-light);
+      margin: 1.5rem auto 0;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 2;
+    }
+
+    .scroll-hint span {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 30px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollDown {
+      0% {
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+
+      50% {
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+
+      51% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+      }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 7rem 2rem;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+      font-weight: 300;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .section-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 3rem;
+    }
+
+    /* ── OUR STORY ── */
+    #story {
+      background: var(--warm-white);
+    }
+
+    .story-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .story-image {
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, var(--blush), var(--gold-light));
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-image::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 2px;
+    }
+
+    .story-image span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story-text p {
+      font-size: 0.85rem;
+      line-height: 2;
+      color: var(--taupe);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── DETAILS ── */
+    #details {
+      background: var(--warm-white);
+    }
+
+    .details-schedule {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .details-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .details-day-label {
+      background: #d9a550c0;
+      border: 1px solid rgba(184, 149, 106, 0.25);
+      color: var(--cream);
+      font-size: 0.88rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 2px;
+    }
+
+    .details-row-cards {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+
+    .details-row-cards.three {
+      grid-template-columns: repeat(3, minmax(160px, 1fr));
+    }
+
+    .detail-card {
+      text-align: center;
+      padding: 1.5rem 1.2rem;
+      background: var(--warm-white);
+      /* background: #ff7518; */
+      border: 1px solid rgba(184, 149, 106, 0.15);
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44, 44, 44, 0.06);
+    }
+
+    .detail-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      margin-bottom: 0.55rem;
+      color: var(--charcoal);
+    }
+
+    .detail-card p {
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: var(--taupe);
+      font-weight: 300;
+    }
+
+    .detail-time {
+      font-size: 1.02rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .detail-desc {
+      margin-top: 0;
+    }
+
+    /* ── INFO SECTIONS ── */
+    .info-section {
+      background: var(--warm-white);
+    }
+
+    .info-section.alt {
+      background: var(--cream);
+    }
+
+    .info-content {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--warm-white);
+      border: 1px solid rgba(184, 149, 106, 0.2);
+      border-radius: 2px;
+      padding: 2rem;
+    }
+
+    .info-section.alt .info-content {
+      background: var(--cream);
+    }
+
+    .info-content p {
+      font-size: 0.96rem;
+      line-height: 1.9;
+      color: var(--taupe);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .info-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-overview {
+      max-width: 860px;
+      margin: 0 auto 1.5rem;
+      font-size: 0.98rem;
+      line-height: 1.9;
+      color: var(--taupe);
+      font-weight: 300;
+      text-align: left;
+    }
+
+    .faq-item {
+      margin-bottom: 1.6rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(184, 149, 106, 0.2);
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-answer {
+      min-height: 2.2rem;
+      font-size: 0.96rem;
+      line-height: 1.9;
+      color: var(--taupe);
+      font-weight: 300;
+    }
+
+    /* ── RSVP ── */
+    #rsvp {
+      /* background: linear-gradient(160deg, var(--cream) 0%, rgba(212, 168, 150, 0.12) 50%, var(--cream) 100%); */
+      background: var(--warm-white);
+    }
+
+    .rsvp-box {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .rsvp-box>p {
+      font-size: 0.78rem;
+      color: var(--taupe);
+      line-height: 2;
+      font-weight: 300;
+      margin-bottom: 2.2rem;
+    }
+
+    .rsvp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .rsvp-form input,
+    .rsvp-form select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid rgba(184, 149, 106, 0.25);
+      background: var(--warm-white);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.3s;
+      border-radius: 2px;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .rsvp-form input::placeholder {
+      color: var(--taupe);
+      font-weight: 300;
+    }
+
+    .rsvp-form input:focus,
+    .rsvp-form select:focus {
+      border-color: var(--gold);
+    }
+
+    .rsvp-form select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a7e72'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.2rem center;
+      padding-right: 2.5rem;
+      color: var(--taupe);
+    }
+
+    .rsvp-form select option {
+      color: var(--charcoal);
+    }
+
+    .btn-rsvp {
+      margin-top: 0.5rem;
+      padding: 0.95rem 2rem;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 300;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-rsvp:hover {
+      background: #a07d55;
+      transform: translateY(-1px);
+    }
+
+    .btn-rsvp:active {
+      transform: translateY(0);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--herobg);
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    footer .footer-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.6rem;
+      font-style: italic;
+    }
+
+    footer p {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+      }
+
+      .details-row {
+        grid-template-columns: 1fr;
+      }
+
+      .details-day-label {
+        justify-content: flex-start;
+      }
+
+      .details-row-cards,
+      .details-row-cards.three {
+        grid-template-columns: 1fr;
+      }
+
+      .info-content {
+        padding: 1.4rem;
+      }
+
+      nav {
+        gap: 1.2rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#jablonka-chyzne">Polish Villages</a>
+    <a href="#details">Wedding Schedule</a>
+    <a href="#travel">Travel</a>
+    <a href="#accommodation">Accommodation</a>
+    <a href="#questions">Other Questions?</a>
+    <a href="#rsvp">RSVP</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-ornament"></div>
+    <div class="hero-ornament"></div>
+    <div class="hero-ornament"></div>
+
+    <div class="hero-content">
+      <p class="hero-pre">You are cordially invited</p>
+      <h1>
+        <em>Karolina</em>
+        <span class="ampersand">&</span>
+        <em>Samuel</em>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-date">Saturday 24th July 2027</p>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section id="jablonka-chyzne">
+    <h2 class="section-title">Jabłonka, Podwilk and Chyżne</h2>
+    <div class="section-divider"></div>
+
+    <div class="story-grid">
+      <div class="story-image">
+        <img src="jablonka_couple.jpeg" alt="Us having fun" />
+      </div>
+      <div class="story-text">
+        <p>By now you'll be aware that we're getting married in Poland, specifically Jabłonka for the church ceremony,
+          which is mostly inhabited by Karolina's relations.</p>
+        <p>The wedding party will then move to Chyżne for a reception that will contain around 20 dinner courses (spread
+          across several sittings) and go on until 5am!</p>
+        <p>Most guests will be accomodated in Chyżne at the wedding venue or in nearby Podwilk.</p>
+        <p>The area is full of rural villages about an hours drive south of Krakow bordering the Tatra mountains.
+          Being rural public transport is very limited and Uber will not
+          work so we'll be providing all essential travels. Further details on travel can be found below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section id="details">
+    <h2 class="section-title">Wedding Schedule</h2>
+    <div class="section-divider"></div>
+
+    <div class="details-schedule">
+      <div class="details-row">
+        <div class="details-day-label">Day 0<br /><br />Friday</div>
+        <div class="details-row-cards three">
+          <div class="detail-card">
+            <h3>Guest Check-In</h3>
+            <p class="detail-time">from 2:00 PM</p>
+            <p class="detail-desc">Podwilk or Chyżne</p>
+          </div>
+          <div class="detail-card">
+            <h3>Airport Transfer 1</h3>
+            <p class="detail-time">5:00 PM</p>
+            <p class="detail-desc">Krakow to Guest Accomodation by Coach</p>
+          </div>
+          <div class="detail-card">
+            <h3>Airport Transfer 2</h3>
+            <p class="detail-time">9:00 PM</p>
+            <p class="detail-desc">Krakow to Guest Accomodation by Coach</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="details-row">
+        <div class="details-day-label">Day 1<br /><br />Saturday</div>
+        <div class="details-row-cards three">
+          <div class="detail-card">
+            <h3>Church Ceremony</h3>
+            <p class="detail-time">2:00 PM</p>
+            <p class="detail-desc">Church of the Transfiguration, Jabłonka</p>
+          </div>
+          <div class="detail-card">
+            <h3>Reception</h3>
+            <p class="detail-time">4:00 PM</p>
+            <p class="detail-desc">Chyżne Miejsce</p>
+          </div>
+          <div class="detail-card">
+            <h3>Bedtime</h3>
+            <p class="detail-time">5:00 AM</p>
+            <p class="detail-desc">Return to accomodation in Podwilk or Chyżne</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="details-row">
+        <div class="details-day-label">Day 2<br /><br />Sunday</div>
+        <div class="details-row-cards">
+          <div class="detail-card">
+            <h3>Farewell Lunch</h3>
+            <p class="detail-time">12:00 PM</p>
+            <p class="detail-desc">Amel Orawa Podwilk</p>
+          </div>
+          <div class="detail-card">
+            <h3>Airport Transfer</h3>
+            <p class="detail-time">3:00 PM</p>
+            <p class="detail-desc">Amel Orawa to Krakow Airport by Coach</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- TRAVEL -->
+  <section id="travel" class="info-section alt">
+    <h2 class="section-title">Travel</h2>
+    <div class="section-divider"></div>
+
+
+    <div class="info-content">
+      <div class="faq-item">
+        <h3 class="faq-question">1. Where should I fly into?</h3>
+        <p class="faq-answer">Krakow airport is the closest. There are several flights a day from Stansted, Luton and
+          Gatwick to Krakow, as well as direct flights from several US airports.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">2. How do I get to/from Jabłonka?</h3>
+        <p class="faq-answer">Public transport options are limited so we will be providing two coaches from Krakow
+          airport to accomodation in Jabłonka on Friday 23rd July (one leaving at 2pm and one leaving at 9pm). Please
+          let us know in your RSVP if you intend to take one of these coaches. Similarly we'll provide a return coach at
+          3pm on Sunday 25th July back to Krakow airport. If you don't fancy the specified coach slots, then your best
+          option is to rent a car from Krakow airport and do the very straightforward hour drive yourself. </p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">3. When should I travel?</h3>
+        <p class="faq-answer">Unfortunately the trip will likely require a day or at least half a day of annual leave
+          (sorry). We would recommend flying to Poland on the morning of Friday 23rd July, then fly home
+          afternoon/evening of Sunday 25th July. Obviously you may wish to extend your stay in Poland! </p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">4. Can I take public transport to Jabłonka?</h3>
+        <p class="faq-answer">The last resort would be public transport. There is a local bus from Krakow central bus
+          station to Jabłonka that runs every 2 hours. Please ask us for further details.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">5. How do I get around Jabłonka, Podwilk or Chyżne?</h3>
+        <p class="faq-answer">The villages themselves are walkable but we will be providing all essential travel from
+          your provided accommodation to/from the church and reception. Note that on Sunday all shops will be closed in
+          the villages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMMODATION -->
+  <section id="accommodation" class="info-section">
+    <h2 class="section-title">Accommodation</h2>
+    <div class="section-divider"></div>
+    <p class="info-overview">We have already reserved accommodation for all guests traveling to Jabłonka and plan to
+      cover the cost of Saturday night, leaving guests to cover the cost for the Friday night. The cost for a room
+      will be around £25 per-person per-night. If you wish to extend your stay beyond the two nights pre-booked please
+      let us know.</p>
+    <div class="info-content">
+      <h3>Option 1: <a href="https://www.booking.com/Share-tSRcvqw">Amel Orawa, Podwilk</a></h3>
+      <p>Will be allocated to guests planning to stay for the Sunday BBQ, as this is where we will be hosting it. Lodge
+        style acommodation for up to 36 guests.</p>
+    </div>
+    <div class="info-content">
+      <h3>Option 2: <a href="https://www.miejscechyzne.pl/noclegi">Miejsce Chyżne</a></h3>
+      <p>Located on the same site as the wedding reception with space to accommodate up to ?? guests. A mixture of hotel
+        style rooms and small apartments, with breakfast included at the hotel.</p>
+    </div>
+  </section>
+
+  <!-- Other QuestionsE -->
+  <section id="questions" class="info-section alt">
+    <h2 class="section-title">Other Questions?</h2>
+    <div class="section-divider"></div>
+    <div class="info-content">
+      <div class="faq-item">
+        <div class="faq-item">
+          <h3 class="faq-question">1. What is the dress code for the weekend?</h3>
+          <p class="faq-answer">For the wedding on Saturday please deploy your best formal dress, so suits and ties for
+            me
+            please. The Sunday will be relaxed so please come in something comfortable for a BBQ in the garden.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">2. Surely we need to get the newly weds a gift?</h3>
+          <p class="faq-answer">At a Polish wedding reception there is a ??? ceremony, where guests queue up to greet
+            the
+            newly weds and share a few words. At this exchange, it is customary to give an envelope with a little money.
+            As
+            we've yet to find a permenant home, please don't get us anything more tangible. Polish guests may come with
+            flowers or wine despite our requests. </p>
+        </div>
+      </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <p class="section-label">We'd Love to See You</p>
+    <h2 class="section-title">RSVP</h2>
+    <div class="section-divider"></div>
+
+    <div class="rsvp-box">
+      <p>Kindly let us know if you can join us by the 1st of May. We truly hope to celebrate this day with you.</p>
+      <div class="rsvp-form">
+        <input type="text" placeholder="Your Full Name" />
+        <input type="email" placeholder="Email Address" />
+        <select>
+          <option value="" disabled selected>Will you be attending?</option>
+          <option>Gratefully accepts</option>
+          <option>Regretfully declines</option>
+        </select>
+        <select>
+          <option value="" disabled selected>Number of guests</option>
+          <option>1</option>
+          <option>2</option>
+        </select>
+        <button class="btn-rsvp">Send RSVP</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-names">Karolina & Samuel</p>
+    <p>24 - 07 - 2027 &nbsp;|&nbsp; Jabłonka, Poland</p>
+  </footer>
+
+</body>
+
+</html>
