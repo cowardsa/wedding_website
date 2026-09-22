@@ -46,7 +46,7 @@
       padding: 1.2rem 2rem;
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
+      gap: 1.65rem;
       background: #879775;
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(184, 149, 106, 0.2);
@@ -56,7 +56,7 @@
     nav a {
       text-decoration: none;
       color: var(--warm-white);
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       font-weight: 300;
@@ -486,6 +486,89 @@
       font-weight: 300;
     }
 
+    /* ── THINGS TO DO ── */
+    .activities-intro,
+    .wedding-intro {
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.96rem;
+      line-height: 1.9;
+      color: var(--taupe);
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .activities-grid {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .activity-card {
+      padding: 1.8rem 1.5rem;
+      background: var(--warm-white);
+      border: 1px solid rgba(184, 149, 106, 0.2);
+      border-radius: 2px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44, 44, 44, 0.06);
+    }
+
+    .activity-type {
+      display: block;
+      margin-bottom: 0.7rem;
+      color: var(--gold);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .activity-card h3,
+    .wedding-expectation h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 0.65rem;
+    }
+
+    .activity-card p,
+    .wedding-expectation p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--taupe);
+      font-weight: 300;
+    }
+
+    section a:not(.btn-rsvp),
+    section a:not(.btn-rsvp):visited {
+      color: #000;
+      text-underline-offset: 3px;
+    }
+
+    /* ── POLISH WEDDINGS ── */
+    .wedding-expectations {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid rgba(184, 149, 106, 0.25);
+    }
+
+    .wedding-expectation {
+      padding: 1.6rem 1.8rem;
+      border-bottom: 1px solid rgba(184, 149, 106, 0.25);
+    }
+
+    .wedding-expectation:nth-child(odd) {
+      border-right: 1px solid rgba(184, 149, 106, 0.25);
+    }
+
     /* ── RSVP ── */
     #rsvp {
       background: var(--warm-white);
@@ -579,9 +662,26 @@
         padding: 1.4rem;
       }
 
+      .activities-grid,
+      .wedding-expectations {
+        grid-template-columns: 1fr;
+      }
+
+      .wedding-expectation:nth-child(odd) {
+        border-right: none;
+      }
+
       nav {
+        justify-content: flex-start;
         gap: 1.2rem;
         padding: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
       }
     }
   </style>
@@ -591,11 +691,13 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#jablonka-chyzne">Polish Villages</a>
-    <a href="#details">Wedding Schedule</a>
+    <a href="#jablonka-chyzne">Villages</a>
+    <a href="#details">Schedule</a>
     <a href="#travel">Travel</a>
-    <a href="#accommodation">Accommodation</a>
-    <a href="#questions">Other Questions?</a>
+    <a href="#accommodation">Stay</a>
+    <a href="#things-to-do">Things to Do</a>
+    <a href="#polish-weddings">Polish Weddings</a>
+    <a href="#questions">Questions</a>
     <a href="#rsvp">RSVP</a>
   </nav>
 
@@ -634,12 +736,13 @@
       <div class="story-text">
         <p>By now you'll be aware that we're getting married in Poland, specifically Jabłonka for the church ceremony,
           which is mostly inhabited by Karolina's relations.</p>
-        <p>The wedding party will then move to Chyżne for a reception that will contain around 20 dinner courses (spread
-          across several sittings) and go on until 5am!</p>
+        <p>The wedding party will then move to Chyżne for a reception that will contain many dinner courses spread
+          across several sittings and go on until 5am!</p>
         <p>Most guests will be accommodated in Chyżne at the wedding venue or in nearby Podwilk.</p>
         <p>The area is full of rural villages about an hour's drive south of Krakow, bordering the Tatra mountains.
           Being rural public transport is very limited and Uber will not
-          work so we'll be providing all essential travels. Further details on travel can be found below.</p>
+          work so we'll be providing all essential travels. Further details on travel can be found below. 
+          Also be aware that all the local shops will be closed on Sunday.</p>
       </div>
     </div>
   </section>
@@ -700,7 +803,7 @@
         <div class="details-day-label">Day 2<br /><br />Sunday<br />July 25th</div>
         <div class="details-row-cards">
           <div class="detail-card">
-            <h3>Farewell Lunch</h3>
+            <h3>Poprawiny (After-Party)</h3>
             <p class="detail-time">12:00 PM</p>
             <p><a
                 href="https://www.google.com/maps/search/?api=1&amp;query=Amel+Orawa%2C+Podwilk+110a%2C+34-722+Podwilk%2C+Poland"
@@ -766,22 +869,122 @@
     <div class="section-divider"></div>
     <p class="info-overview">We have already reserved accommodation for all guests traveling to Jabłonka and plan to
       cover the cost of Saturday night, leaving guests to cover the cost for the Friday night. The cost for a room
-      will be around £25 per-person per-night. Once RSVPs have been received, we'll allocate rooms and confirm each
+      will be around £30 per-person per-night. Once RSVPs have been received, we'll allocate rooms and confirm each
       guest's accommodation in June 2027. If you wish to extend your stay beyond the two nights pre-booked, please let
       us know.</p>
     <div class="info-content">
       <h3>Option 1: <a href="https://www.booking.com/Share-tSRcvqw">Amel Orawa, Podwilk</a></h3>
       <p>Will be allocated to guests planning to stay for the Sunday BBQ, as this is where we will be hosting it. Lodge
-        style accommodation for up to 36 guests. <a
+        style accommodation for up to 36 guests. Check-out by 11am with breakfast provided on Saturday only. <a
           href="https://www.google.com/maps/search/?api=1&amp;query=Amel+Orawa%2C+Podwilk+110a%2C+34-722+Podwilk%2C+Poland"
-          target="_blank" rel="noopener noreferrer">View on Google Maps</a>.</p>
+          target="_blank" rel="noopener noreferrer">Google Maps</a>.</p>
     </div>
     <div class="info-content">
       <h3>Option 2: <a href="https://www.miejscechyzne.pl/noclegi">Miejsce Chyżne</a></h3>
-      <p>Located on the same site as the wedding reception with space to accommodate up to ?? guests. A mixture of hotel
-        style rooms and small apartments, with breakfast included at the hotel. <a
+      <p>Located on the same site as the wedding reception with space to accommodate remaining guests. A mixture of hotel
+        style rooms and small apartments, with breakfast included at the hotel. Check-out by 11am with breakfast included everyday. <a
           href="https://www.google.com/maps/search/?api=1&amp;query=Miejsce+Chyzne%2C+Chyzne+297%2C+34-481+Chyzne%2C+Poland"
-          target="_blank" rel="noopener noreferrer">View on Google Maps</a>.</p>
+          target="_blank" rel="noopener noreferrer">Google Maps</a>.</p>
+    </div>
+  </section>
+
+  <!-- THINGS TO DO -->
+  <section id="things-to-do" class="info-section alt">
+    <h2 class="section-title">Things to Do</h2>
+    <div class="section-divider"></div>
+    <p class="activities-intro">If you are making a longer trip of it, here are
+      a few ideas ranging from a relaxed afternoon to a full day in the mountains.</p>
+
+    <div class="activities-grid">
+      <article class="activity-card">
+        <span class="activity-type">City break</span>
+        <h3>Kraków</h3>
+        <p>We got engaged in Kraków, and would highly recommend the Czartoryski Museum and wandering the Old Town. Two to three days would be plenty.
+           <a href="https://visitkrakow.com/" target="_blank" rel="noopener noreferrer">Plan a visit</a>.</p>
+      </article>
+      <article class="activity-card">
+        <span class="activity-type">Underground adventure</span>
+        <h3>Wieliczka Salt Mine</h3>
+        <p>A backup wedding venue option (if we were minted) but definitely worth a day trip from Kraków. <a href="https://www.wieliczka-saltmine.com/"
+            target="_blank" rel="noopener noreferrer">Visitor information</a>.</p>
+      </article>
+      <article class="activity-card">
+        <span class="activity-type">Mountain town</span>
+        <h3>Zakopane &amp; the Tatras</h3>
+        <p>A popular mountain destination - great views, traditional food and lots of hikes. <a href="https://tpn.gov.pl/tatra-national-park" target="_blank"
+            rel="noopener noreferrer">Check park information</a>.</p>
+      </article>
+      <article class="activity-card">
+        <span class="activity-type">Full-day hike</span>
+        <h3>Babia Góra</h3>
+        <p>About a 20-min drive from Jabłonka. It is a reasonable hike (2 hours up) so you need to:
+          take suitable footwear, layers, water and check weather conditions before setting out. <a
+            href="https://bgpn.gov.pl/" target="_blank" rel="noopener noreferrer">National park updates</a>.</p>
+      </article>
+      <article class="activity-card">
+        <span class="activity-type">Relax</span>
+        <h3>Chochołów Thermal Baths</h3>
+        <p>Recover from the celebrations in warm indoor and outdoor thermal pools with views towards the mountains.
+          There are family, spa and sauna areas. <a href="https://www.chocholowskietermy.pl/en/" target="_blank"
+            rel="noopener noreferrer">See the thermal baths</a>.</p>
+      </article>
+      <article class="activity-card">
+        <span class="activity-type">Scenic day trip</span>
+        <h3>Niedzica &amp; Lake Czorsztyn</h3>
+        <p>Visit storybook Niedzica Castle on the lake, enjoy the mountain scenery and combine it with a walk or drive
+          through the Pieniny region. <a href="https://www.zamekniedzica.pl/?sLanguage=en" target="_blank"
+            rel="noopener noreferrer">Castle information</a>.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- POLISH WEDDINGS -->
+  <section id="polish-weddings" class="info-section">
+    <h2 class="section-title">Polish Weddings</h2>
+    <div class="section-divider"></div>
+    <p class="wedding-intro">A Polish wedding is generous and built for stamina. Expect a long-running
+      celebration with plenty of food, music and invitations to join the dance floor. <a href="https://www.instagram.com/reel/DWts_w3iOUD/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"
+            rel="noopener noreferrer">General advice for foreigners from Instagram.</a> Traditions vary by family, but
+      you'll definitely encounter:</p>
+
+    <div class="wedding-expectations">
+      <div class="wedding-expectation">
+        <h3>A welcome with bread &amp; vodka</h3>
+        <p>When we arrive at the reception, we will be welcomed with bread, salt and vodka. This
+          traditional greeting wishes the newlyweds prosperity, resilience and a joyful life together.</p>
+      </div>
+      <div class="wedding-expectation">
+        <h3>Food, then more food</h3>
+        <p>Dinner is not a single sitting. Hot dishes, cold plates, cake and late-night food arrive in waves throughout
+          the reception, so pace yourself and leave room for the next course. <a href="https://www.instagram.com/reel/DcgonABtQld/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"
+            rel="noopener noreferrer">Instagram</a></p>
+      </div>
+      <div class="wedding-expectation">
+        <h3>Toasts, “Sto lat” &amp; “Gorzko!”</h3>
+        <p>You will hear <em>Sto lat</em>—a song wishing the couple a long life—and plenty of celebratory toasts. Guests
+          also chant <em>Gorzko, gorzko!</em> (“Bitter, bitter!”), calling for the newlyweds to kiss and sweeten the
+          moment. Soft drinks are available but vodka is traditional... <a href="https://www.instagram.com/reel/DX7B8VdNIDc/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"
+            rel="noopener noreferrer">Spontaneous singing is standard - songbooks will be provided.</a> </p>
+          
+      </div>
+      <div class="wedding-expectation">
+        <h3>Wishes &amp; envelopes</h3>
+        <p>Guests traditionally take a moment to congratulate the newlyweds and share their wishes for married life.
+          This is also when cards are given, often with a monetary gift tucked inside an envelope rather than a boxed
+          present.</p>
+      </div>
+      <div class="wedding-expectation">
+        <h3>A full dance floor</h3>
+        <p>We'll have a DJ and smattering of group dancing. The Poles will often dance in couples so don't be afraid to join in!
+          The music will be played in sets with breaks for food and yet more vodka. <a href="https://www.instagram.com/reel/DbJdpSXsVaI/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"
+            rel="noopener noreferrer">Instagram</a> 
+        </p>
+      </div>
+      <div class="wedding-expectation">
+        <h3>A late finish</h3>
+        <p>Polish receptions rarely wind down early. Food and dancing continue well into the night—ours is planned to
+          finish at around 5am—so comfortable shoes and a little stamina are needed.</p>
+      </div>
     </div>
   </section>
 
@@ -797,10 +1000,10 @@
       </div>
       <div class="faq-item">
         <h3 class="faq-question">2. Surely we need to get the newlyweds a gift?</h3>
-        <p class="faq-answer">At a Polish wedding reception there is a ??? ceremony, where guests queue up to greet
-          the newlyweds and share a few words. At this exchange, it is customary to give an envelope with a little
-          money. As we've yet to find a permanent home, please don't get us anything more tangible. Polish guests may
-          come with flowers or wine despite our requests.</p>
+        <p class="faq-answer">After the ceremony, guests will have a chance to greet us and share their wishes. At
+          Polish weddings it is customary to give the newlyweds a card, often with a little money inside an envelope.
+          As we've yet to find a permanent home, please don't get us anything more tangible. Polish guests may come
+          with flowers or wine despite our requests.</p>
       </div>
     </div>
   </section>
